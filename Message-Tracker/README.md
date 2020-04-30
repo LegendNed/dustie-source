@@ -1,7 +1,7 @@
 # Message Tracker
 This message tracker uploads all the message information to MongoDB
 
-# Usage
+## Usage
 Used outside the ready event!
 
 ```js
