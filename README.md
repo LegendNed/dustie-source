@@ -1,3 +1,5 @@
+<a href="https://dustie.xyz"><img height='10%' src="" title="Dustie" alt="Duste"></a>
+
 # Dustie Source
 This project provides Discord JS (v12) code created by our developers, this does NOT include a fully setup BOT!
 
