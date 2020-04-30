@@ -1,3 +1,5 @@
+<img src="https://i.imgur.com/okuYA8m.png"></img>
+
 # Dustie Source
 This project provides Discord JS (v12) code created by our developers, this does NOT include a fully setup BOT!
 
