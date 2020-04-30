@@ -1,5 +1,3 @@
-<a href="https://dustie.xyz"><img height='10%' src="" title="Dustie" alt="Duste"></a>
-
 # Dustie Source
 This project provides Discord JS (v12) code created by our developers, this does NOT include a fully setup BOT!
 
@@ -12,4 +10,3 @@ Join our [Discord](https://dustie.xyz/discord) for more information and any help
  **Nedas Stockus** - Initial work - [LegendNed](https://github.com/LegendNed)
 
 To be become a contributor contact **ned@dustie.xyz**
-
