@@ -1,6 +1,8 @@
 # Dustie Source
 This project provides Discord JS (v12) code created by our developers, this does NOT include a fully setup BOT!
 
+Join our [Discord](https://dustie.xyz/discord) for more information and any help.
+
 ## Authors
 
 * **Nedas Stockus** - Initial work - [LegendNed](https://github.com/LegendNed)
