@@ -1,12 +1,14 @@
+<img src="https://i.imgur.com/okuYA8m.png"></img>
+
 # Dustie Source
 This project provides Discord JS (v12) code created by our developers, this does NOT include a fully setup BOT!
 
-## Authors
+Join our [Discord](https://dustie.xyz/discord) for more information and any help.
 
-* **Nedas Stockus** - Initial work - [LegendNed](https://github.com/LegendNed)
+### Request
+ To submit a request '*of what should be made next*' please contact **Ned#1270** on discord or use the email bellow.
+
+### Authors
+ **Nedas Stockus** - Initial work - [LegendNed](https://github.com/LegendNed)
 
 To be become a contributor contact **ned@dustie.xyz**
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
