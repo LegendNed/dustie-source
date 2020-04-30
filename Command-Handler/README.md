@@ -12,5 +12,5 @@ const options = {
     prefix: "!"
 }
 
-new Tracker(Client,options)
+new Handler(Client,options)
 ```
