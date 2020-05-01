@@ -9,6 +9,7 @@ Join our [Discord](https://dustie.xyz/discord) for more information and any help
  To submit a request '*of what should be made next*' please contact **Ned#1270** on discord or use the email bellow.
 
 ### Authors
- **Nedas Stockus** - Initial work - [LegendNed](https://github.com/LegendNed)
+- **Nedas Stockus** - Dustie   - [LegendNed](https://github.com/LegendNed)
+- **Tom Beinjer**   - Abstract - [Tom-Beinjer](https://github.com/Tom-Beijner)
 
 To be become a contributor contact **ned@dustie.xyz**
