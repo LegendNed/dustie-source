@@ -12,5 +12,7 @@ const options = {
     prefix: "!"
 }
 
-new Handler(Client,options)
+const client = new Handler(options)
+
+client.login(/* token */)
 ```
