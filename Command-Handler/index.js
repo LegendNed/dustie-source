@@ -1,18 +1,42 @@
 const Discord = require('discord.js'),
     fs = require('fs')
 
-class Handler {
-    constructor (Client, data = {}) {
-        if (!(Client instanceof Object)) throw new Error('Invalid <Client> was provided.')
-        this.bot = Client
-        if (!data.directory) throw new Error('No directory was provided in the config!')
-        this.bot.commands = new Discord.Collection()
-        this.bot.aliases = new Discord.Collection()
-        this.loadCommands(data.directory)
+class Handler extends Discord.Client {
+    constructor (data = {}) {
+        super(data);
         if (!data.prefix) throw new Error('No prefix was provided in the config')
-        this.prefix = data.prefix
-        this.bot.devs = data.devs || []
-        Client.on('message', this._message.bind(this))
+
+        Object.defineProperties(this, {
+            commands: {
+                value: new Discord.Collection(),
+                enumerable: true,
+                writable: true
+            },
+
+            aliases: {
+                value: new Discord.Collection(),
+                enumerable: true,
+                writable: true
+            },
+
+            prefix: {
+                value: data.prefix,
+                enumerable: true,
+                writable: true
+            },
+
+            devs: {
+                value: data.devs,
+                enumerable: true,
+                writable: true
+            }
+        })
+        
+        if (!data.directory) throw new Error('No directory was provided in the config!')
+
+        this.loadCommands(data.directory)
+
+        this.on('message', this._message.bind(this))
     }
 
     async _message(message) {
@@ -22,15 +46,15 @@ class Handler {
         let args = message.content.slice(this.prefix.length).trim().split(/ +/)
         let command = args.shift().toLowerCase()
 
-        if (!this.bot.commands.get(command)) command = this.bot.aliases.get(command)
+        if (!this.commands.get(command)) command = this.aliases.get(command)
         if (!command) return
-        else command = this.bot.commands.get(command)
+        else command = this.commands.get(command)
 
-        if (command.dev && !this.bot.devs.includes(message.author.id)) return
+        if (command.dev && !this.devs.includes(message.author.id)) return
         if (command.permissions.length > 0 && !command.permissions.every(perm => message.member.hasPermission(perm))) return
 
         try {
-            command.run(this.bot, message, args)
+            command.run(message, args)
         } catch (err) {
             await message.channel.send(`There was an error, contact the developer!\nError: \`${err.message}\``)
             return console.error(err)
@@ -47,10 +71,10 @@ class Handler {
 
         for (let file of commands) {
             let command = require(directory + file)
-            command = new command()
+            command = new command(this)
             if (!command.name) throw new Error(`'${file}' is missing the command name.`)
-            this.bot.commands.set(command.name, command)
-            if (command.aliases) for (let alias of command.aliases) this.bot.aliases.set(alias, command.name)
+            this.commands.set(command.name, command)
+            if (command.aliases) for (let alias of command.aliases) this.aliases.set(alias, command.name)
         }
     }
 }
