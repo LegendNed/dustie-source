@@ -12,7 +12,7 @@ const Discord = require('discord.js'),
     client = new Discord.Client(),
 
 const { Database } = require('./index.js')
-client.db = new Database(Client,directory)
+client.db = new Database(client,'MongoDB Connection URL')
 
 client.login(/* Token */)
 ```
